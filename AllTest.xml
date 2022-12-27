@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+
+	<test name="all-tests">
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test>
+
+
+	<test name="INDIA">
+		<parameter name="env" value="https://beta.miko3.ai/in" />
+		<parameter name="currency" value="₹211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+
+	<test name="UNITED_STATES">
+		<parameter name="env" value="https://beta.miko3.ai/" />
+		<parameter name="currency" value="$211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="UAE">
+		<parameter name="env" value="https://beta.miko3.ai/ae" />
+		<parameter name="currency" value="₹AED 211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="AUSTRALIA">
+		<parameter name="env" value="https://beta.miko3.ai/au" />
+		<parameter name="currency" value="$211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="CANADA">
+		<parameter name="env" value="https://beta.miko3.ai/ca" />
+		<parameter name="currency" value="CA$ 211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="CHINA">
+		<parameter name="env" value="https://beta.miko3.ai/cn" />
+		<parameter name="currency" value="$211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="GERMANY">
+		<parameter name="env" value="https://beta.miko3.ai/de" />
+		<parameter name="currency" value="€211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="SPAIN">
+		<parameter name="env" value="https://beta.miko3.ai/es" />
+		<parameter name="currency" value="£211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="FRANCE">
+		<parameter name="env" value="https://beta.miko3.ai/fr" />
+		<parameter name="currency" value="€211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="UK">
+		<parameter name="env" value="https://beta.miko3.ai/gb" />
+		<parameter name="currency" value="£211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="HONG_KONG">
+		<parameter name="env" value="https://beta.miko3.ai/hk" />
+		<parameter name="currency" value="$211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+
+	<test name="INDONESIA">
+		<parameter name="env" value="https://beta.miko3.ai/id" />
+		<parameter name="currency" value="$211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="ITALY">
+		<parameter name="env" value="https://beta.miko3.ai/it" />
+		<parameter name="currency" value="£211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="MEXICO">
+		<parameter name="env" value="https://beta.miko3.ai/mx" />
+		<parameter name="currency" value="$211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="SAUDI_ARABIA">
+		<parameter name="env" value="https://beta.miko3.ai/sa" />
+		<parameter name="currency" value="SAR 211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="SINGAPORE">
+		<parameter name="env" value="https://beta.miko3.ai/sg" />
+		<parameter name="currency" value="$211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="THAILAND">
+		<parameter name="env" value="https://beta.miko3.ai/th" />
+		<parameter name="currency" value="$211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="VIETNAM">
+		<parameter name="env" value="https://beta.miko3.ai/vn" />
+		<parameter name="currency" value="$211.00" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_001">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_001" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_002">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_002" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_003">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_003" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_004">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_004" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_005">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_005" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_006">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_006" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_007">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_007" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_008">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_008" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_009">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_009" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_010">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_010" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_011">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_011" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="MIKO_AI_EE_TC_012">
+		<parameter name="env" value="https://beta.miko3.ai" />
+		<classes>
+			<class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_012" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

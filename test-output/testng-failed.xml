@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="INDIA(failed)">
+    <parameter name="env" value="https://beta.miko3.ai"/>
+    <classes>
+      <class name="com.miko.EndToEndTests.MIKO_AI_EE_TC_012">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="launchTheBrowser"/>
+          <include name="ProjectDocuments"/>
+          <include name="maximizeWindow"/>
+          <include name="ReportGenerate"/>
+          <include name="afterClass"/>
+          <include name="MIKO_AI_EE_TC_012_Test"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.miko.EndToEndTests.MIKO_AI_EE_TC_012 -->
+    </classes>
+  </test> <!-- INDIA(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->

@@ -1,0 +1,89 @@
+package com.miko.EndToEndTests;
+
+import java.util.Set;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.Status;
+import com.miko.genericLibrary.BaseClass;
+import com.miko.genericLibrary.ListenerImplementationClass;
+import com.miko.pomRepository.CheckOutInformationPage;
+import com.miko.pomRepository.CheckoutOrderSummaryPage;
+import com.miko.pomRepository.CheckoutPaymentPage;
+import com.miko.pomRepository.HomePage;
+import com.miko.pomRepository.Miko3Page;
+import com.miko.pomRepository.ShoppingCartPage;
+@Listeners(ListenerImplementationClass.class)
+public class MIKO_AI_EE_TC_006 extends BaseClass {
+
+
+	@Test
+	public void MIKO_AI_EE_TC_006_Test()  {
+
+		Miko3Page productPage =  PageFactory.initElements(driver, Miko3Page.class);
+		String Miko3PageUrl = property.readDataFromProperty("Miko3Page_Url");
+		String colorText = excelData.readDataFromExcel("elementText", 1, 2);
+		String homePageUrl = property.readDataFromProperty("URL");
+		String productPriceOnBottomBar = excelData.readDataFromExcel("CommonData", 14, 4);
+		
+
+		//1)Home page should display
+		HomePage homePage = new HomePage(driver);
+		webDriverUtil.explicitlyWaitForUrl(driver, property.readDataFromProperty("URL"));
+		Assert.assertTrue(driver.getCurrentUrl().contains(homePageUrl),"given url is not entered in the address bar");
+		ListenerImplementationClass.test.log(Status.INFO, "Home page is displayed successfully");
+
+		//2)Select the location as United States of America  and click on continue button
+		rUsable.selectGeoLocationForUS(driver);
+
+		//3) Click on 'Buy Now' Button
+		webDriverUtil.clickDisabledElement(homePage.getBuyNowBtn(), driver);
+		webDriverUtil.explicitlyWaitForUrl(driver, Miko3PageUrl);
+		Assert.assertTrue(driver.getCurrentUrl().contains(Miko3PageUrl), "different url is displayed for miko3 page");
+		ListenerImplementationClass.test.log(Status.INFO, "Miko3 tab is displayed successfully");
+
+		//4) On Miko3 Tab, select bot color Red/Blue Color radio button, select Quantity,  if required select Max subscription 
+		webDriverUtil.explicitlyWaitForElementClick(driver, productPage.getRedColor_Btn());
+		webDriverUtil.clickDisabledElement(productPage.getRedColor_Btn(), driver);
+		webDriverUtil.scrollBy(1352, 210, driver);
+		javaUtil.keyPress("pagedown");
+		String bottomBarPrice = homePage.getBottombar_price().getText();
+		
+		//5) Click on 'Buy Now' button  
+		webDriverUtil.clickDisabledElement(productPage.getBuyNow_Btn(), driver);
+
+		//6)Verify shopping cart page details
+		ShoppingCartPage shoppingCart = new ShoppingCartPage(driver);
+		webDriverUtil.explicitlyWaitForElement(driver, shoppingCart.getSub_Total());
+		String subtotalAmt = shoppingCart.getSub_Total().getText();
+		rUsable.verifyShoppingCartDetails(driver, productPriceOnBottomBar, bottomBarPrice);
+
+		//7->ii)Click on 'Go To Checkout' button 
+		shoppingCart.getGo_TO_CheckOut_Btn().click();
+		
+		//verify information page and fill the address
+		String CheckOutInformation = property.readDataFromProperty("information_CheckoutPage");
+		webDriverUtil.explicitlyWaitForUrl(driver, CheckOutInformation);
+		Assert.assertTrue(driver.getCurrentUrl().contains(CheckOutInformation), "checkout-Information page should display");
+		ListenerImplementationClass.test.log(Status.INFO, "CheckOut-Information Page displayed successfully");
+
+		CheckoutOrderSummaryPage OrderSummary = new CheckoutOrderSummaryPage(driver);
+		webDriverUtil.explicitlyWaitForElementTextToPresent(driver, OrderSummary.getFinalAmt(), subtotalAmt);
+		String beforeDiscountFinalAmt = OrderSummary.getFinalAmt().getText();
+		rUsable.verifyOrderSummaryWithDiscount(driver, subtotalAmt, colorText, beforeDiscountFinalAmt);
+		
+		
+		//click on shop pay
+/*		String shopPayUrl = property.readDataFromProperty("shopPay");
+		webDriverUtil.explicitlyWaitForElementClick(driver, checkOutInformation.getShopPay_Btn());
+		checkOutInformation.getShopPay_Btn().click();
+		Assert.assertTrue(driver.getCurrentUrl().contains(shopPayUrl),"different url displayed for shoppay");
+		ListenerImplementationClass.test.log(Status.INFO, "Shoppay display Page displayed successfully");
+		driver.navigate().back();                                   */
+	} 
+
+}
